@@ -1,16 +1,40 @@
 {
-    "employees": [{
-
-    "id":1,
-    "name": "Pont Ferenc"
+  "employees": [
+    {
+      "id": 1,
+      "name": "Pont Ferenc",
+      "salary": "380",
+      "city": "London"
     },
     {
-    "id":2,
-    "name": "Parlag Irén"
+      "id": 2,
+      "name": "Parlag Irén",
+      "salary": "300",
+      "city": "Bukapest"
     },
     {
-    "id":3,
-    "name": "Arc Márton"
-     }
-]
+      "id": 3,
+      "name": "Arc Márton",
+      "salary": "200",
+      "city": "Budapest"
+    },
+    {
+      "name": "Kala Pál",
+      "salary": "500",
+      "city": "Dubai",
+      "id": 4
+    },
+    {
+      "name": "",
+      "salary": "",
+      "city": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "salary": "",
+      "city": "",
+      "id": 6
+    }
+  ]
 }
