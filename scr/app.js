@@ -34,6 +34,7 @@ fetch(url)
 
 
 function renderTable(employees) {
+    dolgozoktabla.innerHTML='';
     employees.forEach(employee => {
         console.log(employee.name)
 
@@ -46,8 +47,9 @@ function renderTable(employees) {
         let delBtn=document.createElement("button");
         delBtn.textContent='Törlés';
         delBtn.addEventListener('click' ,()=>{
-            console.lod("működik");
-        })
+    
+            deleteEmployee (employee.id);
+        });
 
        
     
@@ -98,7 +100,9 @@ function deleteEmployee(id){
     console.log(id);
     let endpoint ="employees";
     let url = host + '/' +endpoint +'/' +id;
-    fetch(url)
+
+    fetch(url,{ 
+        method: "delete"})
     .then(response => response.json)
     .then(result =>{
         console.log(result);
