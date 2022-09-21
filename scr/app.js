@@ -93,6 +93,7 @@ addButton.addEventListener('click', ()=>{
     .then(response => response.json())
     .then(result =>{
         console.log(result);
+        namee.value="";
     })
 })
 

@@ -23,6 +23,12 @@
       "salary": "500",
       "city": "Dubai",
       "id": 4
+    },
+    {
+      "name": "Kolbász Jánosss",
+      "salary": "1590",
+      "city": "Szelevény",
+      "id": 5
     }
   ]
 }
