@@ -11,9 +11,19 @@ const city =document.querySelector("#city");
 
 const host = "http://localhost:3000";
 
+(()=>{
+    getEmployees();
+
+    //autómatikusan le fog futni , csak blokkban van !! EZ KELL!
+})()
+
 
 
 dowloadButton.addEventListener('click',()=>{
+
+});
+
+function getEmployees(){
     let endpoint ="employees";
     let url= host  + '/'+endpoint;
     
@@ -30,7 +40,8 @@ fetch(url)
     console.log("Hiba! A lekérdezés sikertelen")
     console.log(error)
 })
-});
+
+}
 
 
 function renderTable(employees) {
@@ -44,13 +55,8 @@ function renderTable(employees) {
         let tdSalary = document.createElement("td");
         let tdcity = document.createElement("td");
         let tddel = document.createElement("td");
-        let delBtn=document.createElement("button");
-        delBtn.textContent='Törlés';
-        delBtn.addEventListener('click' ,()=>{
-    
-            deleteEmployee (employee.id);
-        });
-
+        let delBtn=makeDelButton(employee.id);
+  
        
     
         tr.appendChild(tdId);
@@ -70,11 +76,33 @@ function renderTable(employees) {
     };
     // console.log(employees[1].name );
 
+    function makeDelButton(id){
+        let delBtn=document.createElement("button");
+        delBtn.textContent='Törlés';
+        delBtn.addEventListener('click' ,()=>{
+            let answer= confirm("Biztosan törölni szeretnéd?");
+            if(answer){
+                deleteEmployee (id);
+                let actualTr= delBtn.parentElement.parentElement;
+                actualTr.parentNode.removeChild(actualTr);
+            }
+    
+           
+        });
+        return delBtn;
+
+    }
+
    
 
 
 
 addButton.addEventListener('click', ()=>{
+   addEmployee();
+});
+
+
+function addEmployee(){
     let endpoint ='employees';
     let url = host +"/"+ endpoint;
     let employee = {
@@ -94,8 +122,37 @@ addButton.addEventListener('click', ()=>{
     .then(result =>{
         console.log(result);
         namee.value="";
+        addEmployeToTable(result);
     })
-})
+    
+};
+
+function addEmployeToTable(employee){
+let tr =document.createElement('tr');
+let tdId =document.createElement('td');
+let tdname =document.createElement('td');
+let tdSalary =document.createElement('td');
+let tdCity =document.createElement('td');
+let tdButton =document.createElement('td');
+
+
+tdId.textContent = employee.id;
+tdname.textContent = employee.name;
+tdSalary.textContent = employee.salary;
+tdCity.textContent= employee.city;
+
+
+tr.appendChild(tdId);
+tr.appendChild(tdname);
+tr.appendChild(tdSalary);
+tr.appendChild(tdCity);
+tr.appendChild(tdButton);
+
+let delButton= makeDelButton(employee.id);
+tdButton.appendChild(delButton);
+dolgozoktabla.appendChild(tr);
+
+}
 
 function deleteEmployee(id){
     console.log(id);
@@ -109,5 +166,6 @@ function deleteEmployee(id){
         console.log(result);
     })
 }
+
 
 

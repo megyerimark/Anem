@@ -7,22 +7,10 @@
       "city": "London"
     },
     {
-      "id": 2,
-      "name": "Parlag Irén",
-      "salary": "300",
-      "city": "Bukapest"
-    },
-    {
       "id": 3,
       "name": "Arc Márton",
       "salary": "200",
       "city": "Budapest"
-    },
-    {
-      "name": "Kala Pál",
-      "salary": "500",
-      "city": "Dubai",
-      "id": 4
     },
     {
       "name": "Kolbász Jánosss",

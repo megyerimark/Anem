@@ -2,15 +2,26 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="app.js" defer></script>
 </head>
 <body>
+
+    <div class="container">
+
+    
+    <div class="h1">
+
     <h1>Dolgozók adatai</h1>
+   
+</div>
+
 
 <div class="container">
+    <div class="content">
     <div class="name">
     <label for="name">Név</label>
     <input type="text" name="name" id="name">
@@ -26,29 +37,22 @@
     <input type="city" name="city" id="city">
 </div>
 </div>
-<br>
+</div>
+
+
+
     <button id="addButton" value="submit">Új dolgozó hozzáadása</button>
-    <br>
-
-
-
-
-
-
    <button id="dowloadButton">Dolgozók letöltése</button>
 
 
 
-
+<br>
 <table id="dolgozoktabla"  border="1">
-  <tr>
-    <td>Id</td>
-    <td>Név</td>
-    <td>Fizetés</td>
-    <td>Település</td>
-  </tr>
+
 
 </table>
 
+</div>
+</div>
 </body>
 </html>
