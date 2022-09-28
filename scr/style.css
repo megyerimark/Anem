@@ -3,7 +3,7 @@
 
 .h1 ,.container,#dowloadButton
 {
-    background: black;
+    background: rgb(44, 42, 42);
     font-family: 'Blaka Ink', cursive;
 font-family: 'Bungee Spice', cursive;
 }
@@ -27,7 +27,3 @@ margin-right: auto;
 display: block;
 padding: 2px;
 }
-#dolgozoktabla{
-    background: #98dad9;
-}
-

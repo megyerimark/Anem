@@ -17,6 +17,12 @@
       "salary": "1590",
       "city": "Szelevény",
       "id": 5
+    },
+    {
+      "name": "Nevet Elek",
+      "salary": "0",
+      "city": "Kijey",
+      "id": 6
     }
   ]
 }

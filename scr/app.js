@@ -6,6 +6,8 @@ const namee = document.querySelector("#name");
 const salary = document.querySelector("#salary");
 const city =document.querySelector("#city");
 // let delBtn=document.querySelector("#delBtn");
+var tbody =document.createElement('tbody');
+dolgozoktabla.appendChild(tbody);
 
 
 
@@ -19,9 +21,9 @@ const host = "http://localhost:3000";
 
 
 
-dowloadButton.addEventListener('click',()=>{
+// dowloadButton.addEventListener('click',()=>{
 
-});
+// });
 
 function getEmployees(){
     let endpoint ="employees";
@@ -45,7 +47,7 @@ fetch(url)
 
 
 function renderTable(employees) {
-    dolgozoktabla.innerHTML='';
+    tbody.innerHTML='';
     employees.forEach(employee => {
         console.log(employee.name)
 
@@ -65,7 +67,7 @@ function renderTable(employees) {
         tr.appendChild(tdcity);
         tddel.appendChild(delBtn);
         tr.appendChild(tddel)
-        dolgozoktabla.appendChild(tr);
+        tbody.appendChild(tr);
     
     
         tdId.innerHTML = employee.id;
@@ -78,6 +80,8 @@ function renderTable(employees) {
 
     function makeDelButton(id){
         let delBtn=document.createElement("button");
+        // delBtn.classList.add('btn');
+        // delBtn.classList.add('btn-primary');
         delBtn.textContent='Törlés';
         delBtn.addEventListener('click' ,()=>{
             let answer= confirm("Biztosan törölni szeretnéd?");
@@ -150,7 +154,7 @@ tr.appendChild(tdButton);
 
 let delButton= makeDelButton(employee.id);
 tdButton.appendChild(delButton);
-dolgozoktabla.appendChild(tr);
+tbody.appendChild(tr);
 
 }
 
