@@ -23,6 +23,12 @@
       "salary": "0",
       "city": "Kijey",
       "id": 6
+    },
+    {
+      "name": "",
+      "salary": "",
+      "city": "",
+      "id": 7
     }
   ]
 }

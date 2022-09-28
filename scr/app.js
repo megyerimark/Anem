@@ -56,8 +56,10 @@ function renderTable(employees) {
         let tdName = document.createElement("td");
         let tdSalary = document.createElement("td");
         let tdcity = document.createElement("td");
-        let tddel = document.createElement("td");
+        let tdButton = document.createElement("td");
+        // let tdedit = document.createElement("td");
         let delBtn=makeDelButton(employee.id);
+        let  editBtn=editButton(employee.id);
   
        
     
@@ -65,9 +67,17 @@ function renderTable(employees) {
         tr.appendChild(tdName);
         tr.appendChild(tdSalary);
         tr.appendChild(tdcity);
-        tddel.appendChild(delBtn);
-        tr.appendChild(tddel)
+
+        
+        // tddel.appendChild(delBtn);
+        tr.appendChild(tdButton)
         tbody.appendChild(tr);
+
+
+
+        tdBtn.appendChild(edit)
+        tr.appendChild(tdButton)
+        tbody.appendChild(tr)
     
     
         tdId.innerHTML = employee.id;
@@ -153,7 +163,10 @@ tr.appendChild(tdCity);
 tr.appendChild(tdButton);
 
 let delButton= makeDelButton(employee.id);
+let editButton =edit(employee)
 tdButton.appendChild(delButton);
+tbody.appendChild(tr);
+tdButton.appendChild(editButton);
 tbody.appendChild(tr);
 
 }
@@ -169,6 +182,23 @@ function deleteEmployee(id){
     .then(result =>{
         console.log(result);
     })
+}
+
+
+
+function editButton(employee){
+    let edit=document.createElement("button");
+    // delBtn.classList.add('btn');
+    // delBtn.classList.add('btn-primary');
+    edit.textContent='Módosítás';
+    edit.addEventListener('click' ,()=>{
+        console.log("siekres edit")
+       
+
+       
+ });
+    return edit;
+
 }
 
 

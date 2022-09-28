@@ -18,7 +18,7 @@ font-family: 'Bungee Spice', cursive;
     text-align: center;
     justify-content: center;
 }
-#addButton,#dowloadButton{
+#addButton{
     background: black;
     font-family: 'Blaka Ink', cursive;
 font-family: 'Bungee Spice', cursive;
@@ -26,4 +26,21 @@ margin-left: auto;
 margin-right: auto;
 display: block;
 padding: 2px;
+align-items: center;
+text-align: center;
+}
+/* .edit-btn .btn{
+    position: center;
+} */
+
+.edited{
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    background: black;
+}
+.edit-btn .bt2{
+    position: center;
+   
 }
